@@ -223,7 +223,7 @@ on:
         options:
           - ophub
           - angel
-          - yourname
+          - HappyEventKing
 
 env:
   TZ: America/New_York
