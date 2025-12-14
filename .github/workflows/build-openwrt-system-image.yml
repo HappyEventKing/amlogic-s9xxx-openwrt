@@ -253,7 +253,11 @@ on:
         options:
           - ophub
           - angel
-          - yourname
+          - Eventi
+      openwrt_size:
+        description: "Set the size of the system BOOTFS and ROOTFS partitions."
+        required: false
+        default: "512/2560"
 
 env:
   FEEDS_CONF: config/${{ inputs.source_branch }}/feeds.conf.default
@@ -461,6 +465,7 @@ jobs:
           kernel_repo: ${{ inputs.kernel_repo }}
           kernel_usage: ${{ inputs.kernel_usage }}
           builder_name: ${{ inputs.builder_name }}
+          openwrt_size: ${{ inputs.openwrt_size }}
 
       - name: Upload the packaged OpenWrt
         uses: ncipollo/release-action@main
