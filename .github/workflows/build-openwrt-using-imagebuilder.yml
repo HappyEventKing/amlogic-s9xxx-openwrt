@@ -244,7 +244,11 @@ on:
         options:
           - ophub
           - angel
-          - yourname
+          - Eventi
+      armbian_size:
+        description: "Set the size of the system BOOTFS and ROOTFS partitions."
+        required: false
+        default: "512/2560"
 
 env:
   TZ: Etc/UTC
@@ -342,6 +346,7 @@ jobs:
           kernel_repo: ${{ inputs.kernel_repo }}
           kernel_usage: ${{ inputs.kernel_usage }}
           builder_name: ${{ inputs.builder_name }}
+          armbian_size: ${{ inputs.armbian_size }}
 
       - name: Upload the packaged OpenWrt
         uses: ncipollo/release-action@main
